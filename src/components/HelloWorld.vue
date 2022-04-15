@@ -1,7 +1,12 @@
 <template>
   <div class="zhanshi">
-    <van-swipe class="my-swipe"  indicator-color="white">
-      <van-swipe-item>
+    <van-swipe
+     class="my-swipe"
+       :autoplay="3000"
+        indicator-color="white"
+        @change="indicator"
+        >
+      <van-swipe-item @click="indicatorClick(event)">
         <img src="../assets/images/action@3x.png" alt="">
       </van-swipe-item>
       <van-swipe-item>
@@ -15,7 +20,7 @@
       </van-swipe-item>
     </van-swipe>
     <div class="content">
-      
+
     </div>
     <div class="firstCong">
       <img src="../assets/images/shouchong@3x.png" alt="">
@@ -39,6 +44,14 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods:{
+    indicator(index){
+      console.log(index)
+    },
+    indicatorClick(event){
+      console.log(event)
+    }
   }
 }
 </script>
@@ -51,12 +64,12 @@ export default {
 }
 .my-swipe .van-swipe-item {
     color: #fff;
-    font-size: 20px;
-    line-height: 150px;
+    font-size: 0.02rem;
+    line-height: 1.5rem;
     text-align: center;
     background-color: #39a9ed;
     height: 2.2rem;
-    
+
     img{
       width: 100%;
       height: 2.2rem;
@@ -69,11 +82,11 @@ export default {
   }
   .firstCong{
     width: 1.34rem;
-    height: 56.22px;
+    height: 0.5622rem;
     position: fixed;
     top: 7.4rem;
-    right: 20px;
-    margin-top: -56.22px;
+    right: 0.2rem;
+    margin-top: -0.5622rem;
     img{
       width: 100%;
       height: 0.844rem;
@@ -94,11 +107,11 @@ export default {
   }
   .xingdong{
     width: 1.34rem;
-    height: 56.22px;
+    height: 0.5622rem;
     position: fixed;
     top: 7.8rem;
-    right: 20px;
-    margin-top: 31.555px;
+    right: 0.2rem;
+    margin-top: 0.3155rem;
     img{
       width: 100%;
       height: 0.844rem;
@@ -106,19 +119,19 @@ export default {
   }
   .fangjianname{
     position: fixed;
-    bottom: 88px;
-    right: 20px;
+    bottom: 0.88rem;
+    right: 0.2rem;
     width:2.44rem ;
     height:0.76rem ;
     line-height: 0.76rem;
-    border-radius: 30px;
+    border-radius: 0.3rem;
     background: rgba(104, 100, 100,.4);
     img{
       width: 0.64rem;
       height: 0.64rem;
       position: absolute;
-      top: 3px;
-      left: 4px;
+      top: 0.03rem;
+      left: 0.04rem;
       z-index: 1111;
     }
     span{
@@ -126,7 +139,7 @@ export default {
       top: 0;
       left: 0.64rem;
       font-size: 0.24rem;
-      margin-left: 9px;
+      margin-left: 0.09rem;
       vertical-align: middle;
     }
     .close{
@@ -134,8 +147,8 @@ export default {
       height: 0.48rem;
       text-align: center;
         position: absolute;
-        top: 1px;
-        right: 17px;
+        top:0.01rem;
+        right: 0.17rem;
     }
   }
 

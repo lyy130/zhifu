@@ -237,23 +237,27 @@
        box-sizing: border-box;
        margin-top: 0.12rem;
   }
+  /deep/.van-tab{
+    color: #FE4329;
+  }
   /deep/.van-tab__text--ellipsis{
     z-index: 1000;
     font-size: 0.28rem;
+    // color: #FE4329;
   }
   /deep/.van-tab--active {
       color: #fff;
       font-size: 0.3rem;
   }
   /deep/.van-tabs__content--animated{
-    width: calc(~'311.34/100*2rem');
+    width: calc(~'300/100*2rem');
     margin: 0 auto;
     .van-tabs__track{
-      width: calc(~'311.34/100*2rem');
+      width: calc(~'300/100*2rem');
     }
   }
   .jeTypeContent{
-    width: calc(~'311/100*2rem');
+    width: calc(~'300/100*2rem');
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -327,9 +331,10 @@
     p{
       color: white;
       font-size: calc(~'13.5/100*2rem');
-      padding: 0 1.3rem;
+      padding: 0 0.5rem;
       box-sizing: border-box;
       line-height: calc(~'52/100*2rem');
+      text-align: center;
       span{
         color: #FF7100;
       }

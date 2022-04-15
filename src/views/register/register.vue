@@ -3,65 +3,42 @@
     <header>
       <i class="iconfont icon-zuojiantou"></i>
       <span>手机号登录</span>
-      <span>注册</span>
+      <span></span>
     </header>
     <form action="" method="post" autocomplete=“off”>
       <div class="user" @focus="clickUser" @blur="leaveUser">
         <input type="text" placeholder="请输入账号" name="user1" id="user" v-model="user"  autocomplete=“new-password”/>
-        <label for="user">请输入账号</label>
+        <label for="user"></label>
       </div>
       <div class="psd">
         <input type="password" placeholder="请输入密码" name="psd1" id="psd" v-model="psd" autocomplete=“new-password”/>
-        <label for="psd">请输入密码</label>
+        <label for="psd"></label>
+      </div>
+      <div class="yzm">
+        <input type="text" placeholder="请输入验证码" name="yzm" id="yzm" v-model="yzm" autocomplete=“new-password”/>
+        <label for="yzm"></label>
       </div>
       <span class="wjPsd">忘记密码</span>
-      <button type="button" @click="dl">
+      <button type="submit" >
         <span>登录</span>
-        <img src="./res/login_btn_on@2x.png" alt="">
+        <img src="./res/login_btn_off@2x.png" alt="">
       </button>
     </form>
-    <div class="TypeH">
-      <hr>
-      <p>其他登录方式</p>
-    </div>
-    <div class="loginType">
-      <div class="type_item">
-        <img src="./res/login_wx@2x.png" alt="">
-        <span>微信</span>
-      </div>
-      <div class="type_item">
-        <img src="./res/login_qq@2x.png" alt="">
-        <span>QQ</span>
-      </div>
-      <div class="type_item">
-        <img src="./res/login_weibo@2x.png" alt="">
-        <span>微博</span>
-      </div>
-    </div>
     <p class="footer">注册或登录，即代表你已同意<span>《用户协议》</span></p>
   </div>
 </template>
 
 <script>
-  import {login} from '../../api/index.js'
   export default{
     name:'login',
     data(){
       return{
         user:'',
-        psd:''
+        psd:'',
+        yzm:''
       }
     },
     methods:{
-      dl(){
-        let data={
-          "phoneNumber":this.user,
-          "password":this.psd
-        }
-        login(data).then((res)=>{
-          console.log(res)
-        })
-      },
       clickUser(){
         console.log(this.user)
         // this.user = ''
@@ -72,7 +49,6 @@
     }
   }
 </script>
-
 <style lang="less" scoped="scoped">
   body{
     height: 100vh!important;
@@ -85,6 +61,7 @@
   .login{
     width: 7.5rem;
     height: 100%;
+    overflow: hidden;
     header{
       width: 100%;
       height: 0.32rem;
@@ -126,25 +103,24 @@
       box-sizing: border-box;
       position: relative;
       div{
+        position: relative;
         width: 100%;
         height: 0.8rem;
-        // line-height: 0.8rem;
+        line-height: 0.8rem;
         // background-color: #ccc;
         border-bottom: 1px solid #E5E5E5;
         margin-bottom: 0.41rem;
-        position: relative;
         input{
           position: absolute;
           left: 0;
           top: 0;
           width: 100%;
           height: 95%;
-          font-size: 0.24rem;
           outline: none;
           border: none;
+          font-size: 0.24rem;
           box-shadow: 0 0 0px 1000px white inset !important;
-          border-bottom:none
-          // -webkit-text-fill-color: #fff;
+          -webkit-text-fill-color: #fff;
         }
         label{
           font-size: 0.24rem;

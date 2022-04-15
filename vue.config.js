@@ -19,8 +19,8 @@ module.exports={
        proxy:{
          '^/api':{
            changeOrigin: true,
-           target:'http://10.10.11.45:8866',
-           pathRewrite:{'^/api':''},
+           target:'http://interface.release.vliao9.com:9916',
+           pathRewrite:{'^/api':' '},
          }
        }
      }
